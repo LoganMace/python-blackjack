@@ -14,7 +14,7 @@ class Card():
         self.rank = rank
     
     def __str__(self):
-        return '{} of {}'.format(self.rank, self.suit)
+        return '{self.rank} of {self.suit}'
     
     
 class Deck:
@@ -29,7 +29,7 @@ class Deck:
         deck_comp = ''
         for card in self.deck:
             deck_comp += '\n{}'.format(card.__str__())
-        return 'The deck has: {}'.format(deck_comp)
+        return 'The deck has: {deck_comp}'
             
 
     def shuffle(self):
@@ -81,7 +81,7 @@ def take_bet(chips):
             print('Sorry, please provide an integer.')
         else:
             if chips.bet > chips.total:
-                print('Not enough chips! Your total is: {}'.format(chips.total))
+                print('Not enough chips! Your total is: {chips.total}')
             else:
                 break
 
@@ -115,7 +115,7 @@ def show_some(player,dealer):
     print("Dealer's Hand:")
     print("One card hidden!")
     print(dealer.cards[1])
-    print("Dealer's shown value is: {}".format(dealer.value))
+    print("Dealer's shown value is: {dealer.value}")
     print("\n")
     print("Player's Hand:")
     for card in player.cards:
